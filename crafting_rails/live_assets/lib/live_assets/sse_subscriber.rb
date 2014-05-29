@@ -2,7 +2,8 @@ require "thread"
 module LiveAssets
   class SSESubscriber
     def initialize(queue = Queue.new)
-      @queue = queue LiveAssets.subscribe(@queue)
+      @queue = queue
+      LiveAssets.subscribe(@queue)
     end
 
     def each
